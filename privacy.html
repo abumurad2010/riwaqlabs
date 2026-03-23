@@ -1,338 +1,936 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <title>Privacy Policy — Mawaqit | مواقيت</title>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="Privacy Policy for Mawaqit — the free Islamic prayer times app by Riwaq Labs." />
-    <style>
-      * { box-sizing: border-box; margin: 0; padding: 0; }
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacy Policy — Mawaqit | Riwaq Labs</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
 
-      :root {
-        --green: #1a8c5b;
-        --green-light: #e8f5f0;
-        --text: #111;
-        --text-muted: #666;
-        --bg: #ffffff;
-        --bg-card: #f7f7f7;
-        --border: #e5e5e5;
-      }
+  body {
+    font-family: Georgia, 'Times New Roman', serif;
+    background: #0d1117;
+    color: #e0d5c0;
+    min-height: 100vh;
+  }
 
-      @media (prefers-color-scheme: dark) {
-        :root {
-          --text: #f0f0f0;
-          --text-muted: #999;
-          --bg: #0d0d0d;
-          --bg-card: #1a1a1a;
-          --border: #2a2a2a;
-          --green-light: #0d2a1e;
-        }
-      }
+  /* HEADER */
+  .header {
+    background: #0a0d13;
+    border-bottom: 1px solid #1e1a14;
+    padding: 24px 20px;
+    text-align: center;
+  }
 
-      body {
-        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-        background: var(--bg);
-        color: var(--text);
-        line-height: 1.7;
-        padding: 0 20px 60px;
-      }
+  .logo-img {
+    height: 52px;
+    width: auto;
+    display: block;
+    margin: 0 auto 10px;
+  }
 
-      /* ── Header ── */
-      header {
-        max-width: 720px;
-        margin: 0 auto;
-        padding: 40px 0 32px;
-        border-bottom: 1px solid var(--border);
-        margin-bottom: 40px;
-      }
+  .header-tagline {
+    font-size: 12px;
+    color: #8a7a60;
+    font-style: italic;
+    letter-spacing: 0.05em;
+  }
 
-      .back-link {
-        display: inline-flex;
-        align-items: center;
-        gap: 5px;
-        font-size: 13px;
-        color: var(--green);
-        text-decoration: none;
-        margin-bottom: 24px;
-      }
-      .back-link:hover { text-decoration: underline; }
-      .back-link svg { width: 14px; height: 14px; }
+  /* LANGUAGE SELECTOR */
+  .lang-bar {
+    background: #0f1318;
+    border-bottom: 1px solid #1e1a14;
+    padding: 12px 16px;
+    overflow-x: auto;
+    white-space: nowrap;
+    text-align: center;
+    -webkit-overflow-scrolling: touch;
+  }
 
-      .header-brand {
-        display: inline-block;
-        background: #0d1b2a;
-        border-radius: 14px;
-        padding: 10px 20px;
-        line-height: 0;
-      }
-      .header-brand img {
-        height: 44px;
-        width: auto;
-        display: block;
-      }
-      @media (min-width: 480px) {
-        .header-brand img { height: 52px; }
-      }
+  .lang-btn {
+    display: inline-block;
+    padding: 6px 12px;
+    margin: 3px 2px;
+    border-radius: 20px;
+    border: 1px solid #2a2416;
+    background: transparent;
+    color: #8a7a60;
+    font-size: 12px;
+    cursor: pointer;
+    font-family: Georgia, serif;
+    transition: all 0.2s;
+    white-space: nowrap;
+  }
 
-      /* ── Content ── */
-      .content {
-        max-width: 720px;
-        margin: 0 auto;
-      }
+  .lang-btn:hover { border-color: #c9a84c; color: #c9a84c; }
+  .lang-btn.active { background: #c9a84c; color: #0a0d13; border-color: #c9a84c; font-weight: bold; }
 
-      .page-title {
-        font-size: 28px;
-        font-weight: 700;
-        color: var(--text);
-        margin-bottom: 6px;
-      }
-      .page-meta {
-        font-size: 13px;
-        color: var(--text-muted);
-        margin-bottom: 36px;
-      }
+  /* CONTENT */
+  .container {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 40px 24px 80px;
+  }
 
-      /* ── Sections ── */
-      .policy-section {
-        margin-bottom: 36px;
-      }
+  .policy-section { display: none; }
+  .policy-section.active { display: block; }
 
-      .section-heading {
-        font-size: 16px;
-        font-weight: 700;
-        color: var(--text);
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        margin-bottom: 12px;
-      }
-      .section-heading::before {
-        content: '';
-        display: block;
-        width: 3px;
-        height: 18px;
-        background: var(--green);
-        border-radius: 2px;
-        flex-shrink: 0;
-      }
+  h1 {
+    font-size: 26px;
+    color: #c9a84c;
+    margin-bottom: 6px;
+  }
 
-      .policy-section p {
-        font-size: 15px;
-        color: var(--text-muted);
-        margin-bottom: 12px;
-      }
+  .app-name {
+    font-size: 15px;
+    color: #8a7a60;
+    margin-bottom: 4px;
+  }
 
-      .policy-section ul {
-        list-style: none;
-        padding: 0;
-        display: flex;
-        flex-direction: column;
-        gap: 6px;
-        margin-top: 8px;
-      }
-      .policy-section ul li {
-        font-size: 15px;
-        color: var(--text-muted);
-        padding-left: 18px;
-        position: relative;
-      }
-      .policy-section ul li::before {
-        content: '—';
-        position: absolute;
-        left: 0;
-        color: var(--green);
-        font-size: 13px;
-      }
+  .last-updated {
+    font-size: 12px;
+    color: #5a4e38;
+    margin-bottom: 32px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #1e1a14;
+  }
 
-      /* ── Highlight card ── */
-      .highlight-card {
-        background: var(--green-light);
-        border-radius: 12px;
-        padding: 16px 20px;
-        margin-bottom: 12px;
-        border: 1px solid var(--border);
-      }
-      .highlight-card p {
-        color: var(--text);
-        margin: 0;
-        font-size: 14px;
-        line-height: 1.6;
-      }
+  h2 {
+    font-size: 17px;
+    color: #c9a84c;
+    margin: 32px 0 12px;
+    padding-left: 12px;
+    border-left: 3px solid #c9a84c;
+  }
 
-      /* ── Contact ── */
-      .contact-card {
-        background: var(--bg-card);
-        border: 1px solid var(--border);
-        border-radius: 12px;
-        padding: 20px 24px;
-        margin-top: 8px;
-      }
-      .contact-card p {
-        margin-bottom: 6px;
-        font-size: 14px;
-        color: var(--text-muted);
-      }
-      .contact-card p:last-child { margin-bottom: 0; }
-      .contact-card a {
-        color: var(--green);
-        text-decoration: none;
-      }
-      .contact-card a:hover { text-decoration: underline; }
+  p { font-size: 14px; line-height: 1.8; color: #c8bca8; margin-bottom: 12px; }
 
-      /* ── Footer ── */
-      footer {
-        max-width: 720px;
-        margin: 60px auto 0;
-        padding-top: 24px;
-        border-top: 1px solid var(--border);
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        flex-wrap: wrap;
-        gap: 12px;
-      }
-      footer p {
-        font-size: 12px;
-        color: var(--text-muted);
-      }
-      footer a {
-        font-size: 12px;
-        color: var(--green);
-        text-decoration: none;
-      }
-      footer a:hover { text-decoration: underline; }
+  ul {
+    margin: 8px 0 12px 24px;
+    font-size: 14px;
+    line-height: 1.8;
+    color: #c8bca8;
+  }
 
-      @media (max-width: 480px) {
-        .page-title { font-size: 22px; }
-        footer { flex-direction: column; align-items: flex-start; }
-      }
-    </style>
-  </head>
-  <body>
+  ul li { margin-bottom: 4px; }
 
-    <header>
-      <a class="back-link" href="https://riwaqlabs.com">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <polyline points="15 18 9 12 15 6"/>
-        </svg>
-        riwaqlabs.com
-      </a>
-      <div class="header-brand">
-        <img src="/riwaq-labs-logo.png" alt="Riwaq Labs" />
-      </div>
-    </header>
+  a { color: #c9a84c; text-decoration: none; }
+  a:hover { text-decoration: underline; }
 
-    <div class="content">
-      <h2 class="page-title">Privacy Policy</h2>
-      <p class="page-meta">Last updated: March 2026</p>
+  .no-collect-box {
+    background: #0f1a10;
+    border: 1px solid #1a3a1a;
+    border-radius: 10px;
+    padding: 16px 20px;
+    margin: 16px 0;
+  }
 
-      <!-- 1. Introduction -->
-      <div class="policy-section">
-        <h3 class="section-heading">1. Introduction</h3>
-        <p>
-          Mawaqit is developed by Riwaq Labs. This Privacy Policy explains how the app handles your information.
-          We are committed to protecting your privacy.
-        </p>
-        <div class="highlight-card">
-          <p>
-            <strong>Short version:</strong> We collect nothing. Everything stays on your device.
-            No accounts, no tracking, no ads — ever.
-          </p>
-        </div>
-      </div>
+  .no-collect-box ul { color: #7ab87a; margin-left: 20px; }
 
-      <!-- 2. Information We Collect -->
-      <div class="policy-section">
-        <h3 class="section-heading">2. Information We Collect</h3>
-        <p>
-          <strong>Location Data:</strong> The app requests access to your device location solely to calculate accurate
-          prayer times and Qibla direction for your city. Location data is processed entirely on your device
-          and is never transmitted to our servers or any third party.
-        </p>
-        <p>
-          <strong>User Preferences:</strong> Settings such as your chosen prayer calculation method, language,
-          theme, and notification preferences are stored locally on your device. This data never leaves your device.
-        </p>
-        <p>
-          <strong>No Account Required:</strong> The app does not require you to create an account or provide
-          any personal information such as name, email address, or phone number.
-        </p>
-      </div>
+  /* FOOTER */
+  .footer {
+    margin-top: 60px;
+    padding-top: 24px;
+    border-top: 1px solid #1e1a14;
+    text-align: center;
+  }
 
-      <!-- 3. Information We Do NOT Collect -->
-      <div class="policy-section">
-        <h3 class="section-heading">3. Information We Do NOT Collect</h3>
-        <p>We do not collect, store, or transmit:</p>
-        <ul>
-          <li>Personal identification information</li>
-          <li>Device identifiers or advertising IDs</li>
-          <li>Usage analytics or behavioral data</li>
-          <li>Location data to external servers</li>
-          <li>Any data to external servers whatsoever</li>
-        </ul>
-      </div>
+  .footer p { font-size: 12px; color: #5a4e38; margin-bottom: 6px; }
+  .footer a { color: #8a7a60; }
 
-      <!-- 4. Permissions -->
-      <div class="policy-section">
-        <h3 class="section-heading">4. Permissions</h3>
-        <p>
-          <strong>Location (optional):</strong> Used only to auto-detect your city for prayer time calculation.
-          You may manually enter your city and deny this permission entirely.
-        </p>
-        <p>
-          <strong>Notifications (optional):</strong> Used to deliver Adhan and Athkar reminders at times you
-          configure. You may disable notifications at any time in your device settings.
-        </p>
-      </div>
+  /* RTL support */
+  [dir="rtl"] h2 { padding-left: 0; padding-right: 12px; border-left: none; border-right: 3px solid #c9a84c; }
+  [dir="rtl"] ul { margin-left: 0; margin-right: 24px; }
+</style>
+</head>
+<body>
 
-      <!-- 5. Third-Party Services -->
-      <div class="policy-section">
-        <h3 class="section-heading">5. Third-Party Services</h3>
-        <p>
-          The app does not integrate any third-party advertising networks, analytics services,
-          or social media SDKs.
-        </p>
-        <p>
-          The app uses the Nominatim geocoding service (openstreetmap.org) only when you perform a manual
-          city search. No personal data is sent — only the city name you type.
-        </p>
-      </div>
+<!-- HEADER -->
+<div class="header">
+  <img
+    src="https://raw.githubusercontent.com/abumurad2010/riwaqlabs/main/riwaq-labs-logo.png"
+    alt="Riwaq Labs"
+    class="logo-img"
+    onerror="this.style.display='none'; document.getElementById('fallback-name').style.display='block';"
+  />
+  <div id="fallback-name" style="display:none; font-size:22px; color:#c9a84c; font-weight:bold; margin-bottom:6px;">
+    Riwaq Labs · رواق لابز
+  </div>
+  <div class="header-tagline">Where knowledge gathers · حيث يجتمع العلم</div>
+</div>
 
-      <!-- 6. Children's Privacy -->
-      <div class="policy-section">
-        <h3 class="section-heading">6. Children's Privacy</h3>
-        <p>
-          The app is suitable for all ages. We do not knowingly collect any information from
-          children under the age of 13.
-        </p>
-      </div>
+<!-- LANGUAGE BAR -->
+<div class="lang-bar">
+  <button class="lang-btn active" onclick="setLang('en', 'ltr', this)">English</button>
+  <button class="lang-btn" onclick="setLang('ar', 'rtl', this)">العربية</button>
+  <button class="lang-btn" onclick="setLang('fr', 'ltr', this)">Français</button>
+  <button class="lang-btn" onclick="setLang('es', 'ltr', this)">Español</button>
+  <button class="lang-btn" onclick="setLang('ru', 'ltr', this)">Русский</button>
+  <button class="lang-btn" onclick="setLang('zh', 'ltr', this)">中文</button>
+  <button class="lang-btn" onclick="setLang('tr', 'ltr', this)">Türkçe</button>
+  <button class="lang-btn" onclick="setLang('ur', 'rtl', this)">اردو</button>
+  <button class="lang-btn" onclick="setLang('id', 'ltr', this)">Indonesia</button>
+  <button class="lang-btn" onclick="setLang('bn', 'ltr', this)">বাংলা</button>
+  <button class="lang-btn" onclick="setLang('fa', 'rtl', this)">فارسی</button>
+  <button class="lang-btn" onclick="setLang('ms', 'ltr', this)">Melayu</button>
+  <button class="lang-btn" onclick="setLang('pt', 'ltr', this)">Português</button>
+  <button class="lang-btn" onclick="setLang('sw', 'ltr', this)">Kiswahili</button>
+  <button class="lang-btn" onclick="setLang('ha', 'ltr', this)">Hausa</button>
+</div>
 
-      <!-- 7. Changes to This Policy -->
-      <div class="policy-section">
-        <h3 class="section-heading">7. Changes to This Policy</h3>
-        <p>
-          We may update this Privacy Policy from time to time. Any changes will be reflected with an
-          updated date at the top of this page. Continued use of the app after changes constitutes
-          acceptance of the updated policy.
-        </p>
-      </div>
+<div class="container">
 
-      <!-- 8. Contact -->
-      <div class="policy-section">
-        <h3 class="section-heading">8. Contact</h3>
-        <p>If you have any questions about this Privacy Policy, please reach out:</p>
-        <div class="contact-card">
-          <p><strong>Developer:</strong> Riwaq Labs</p>
-          <p><strong>Email:</strong> <a href="mailto:contact@riwaqlabs.com">contact@riwaqlabs.com</a></p>
-          <p><strong>Website:</strong> <a href="https://riwaqlabs.com" target="_blank">riwaqlabs.com</a></p>
-        </div>
-      </div>
-    </div>
+<!-- ═══════════ ENGLISH ═══════════ -->
+<div id="lang-en" class="policy-section active">
+  <h1>Privacy Policy</h1>
+  <p class="app-name">Mawaqit | مواقيت — Developed by Riwaq Labs</p>
+  <p class="last-updated">Last updated: March 2026</p>
 
-    <footer>
-      <p>© 2025 Riwaq Labs · رواق لابز</p>
-      <a href="https://riwaqlabs.com">riwaqlabs.com</a>
-    </footer>
+  <h2>1. Introduction</h2>
+  <p>Mawaqit is developed by Riwaq Labs. This Privacy Policy explains how the app handles your information. We are fully committed to protecting your privacy.</p>
 
-  </body>
+  <h2>2. Information We Collect</h2>
+  <p><strong>Location Data:</strong> The app requests access to your device location solely to calculate accurate prayer times and Qibla direction for your city. Location data is processed entirely on your device and is never transmitted to our servers or any third party.</p>
+  <p><strong>User Preferences:</strong> Settings such as your chosen prayer calculation method, language, theme, and notification preferences are stored locally on your device. This data never leaves your device.</p>
+  <p><strong>No Account Required:</strong> The app does not require you to create an account or provide any personal information such as name, email address, or phone number.</p>
+
+  <h2>3. Information We Do NOT Collect</h2>
+  <div class="no-collect-box">
+    <ul>
+      <li>Personal identification information</li>
+      <li>Device identifiers or advertising IDs</li>
+      <li>Usage analytics or behavioural data</li>
+      <li>Location data to external servers</li>
+      <li>Any data to external servers whatsoever</li>
+    </ul>
+  </div>
+
+  <h2>4. Permissions</h2>
+  <p><strong>Location (optional):</strong> Used only to auto-detect your city for prayer time calculation. You may manually enter your city and deny this permission entirely.</p>
+  <p><strong>Notifications (optional):</strong> Used to deliver Adhan and Athkar reminders at times you configure. You may disable notifications at any time in your device settings.</p>
+
+  <h2>5. Third-Party Services</h2>
+  <p>The app does not integrate any third-party advertising networks, analytics services, or social media SDKs.</p>
+  <p>The app uses the Nominatim geocoding service (openstreetmap.org) only when you perform a manual city search. No personal data is sent — only the city name you type.</p>
+
+  <h2>6. Children's Privacy</h2>
+  <p>The app is suitable for all ages. We do not knowingly collect any information from children under the age of 13.</p>
+
+  <h2>7. Changes to This Policy</h2>
+  <p>We may update this Privacy Policy from time to time. Any changes will be reflected with an updated date at the top of this page.</p>
+
+  <h2>8. Contact</h2>
+  <p>Email: <a href="mailto:riwaq@riwaqlabs.com">riwaq@riwaqlabs.com</a><br>
+  Website: <a href="https://riwaqlabs.com">riwaqlabs.com</a></p>
+
+  <div class="footer">
+    <p>© 2025 Riwaq Labs · رواق لابز</p>
+    <p><a href="https://riwaqlabs.com">riwaqlabs.com</a></p>
+  </div>
+</div>
+
+<!-- ═══════════ ARABIC ═══════════ -->
+<div id="lang-ar" class="policy-section" dir="rtl" lang="ar">
+  <h1>سياسة الخصوصية</h1>
+  <p class="app-name">مواقيت | Mawaqit — طُوِّر بواسطة رواق لابز</p>
+  <p class="last-updated">آخر تحديث: مارس 2026</p>
+
+  <h2>1. مقدمة</h2>
+  <p>مواقيت تطبيق طوّرته رواق لابز. تشرح سياسة الخصوصية هذه كيفية تعاملنا مع معلوماتك. نحن ملتزمون تمامًا بحماية خصوصيتك.</p>
+
+  <h2>2. المعلومات التي نجمعها</h2>
+  <p><strong>بيانات الموقع:</strong> يطلب التطبيق الوصول إلى موقع جهازك فقط لحساب أوقات الصلاة الدقيقة واتجاه القبلة لمدينتك. تُعالَج بيانات الموقع كليًا على جهازك ولا تُرسَل أبدًا إلى خوادمنا أو أي طرف ثالث.</p>
+  <p><strong>تفضيلات المستخدم:</strong> تُخزَّن الإعدادات مثل طريقة حساب الصلاة ولغة التطبيق والسمة وتفضيلات الإشعارات محليًا على جهازك. لا تغادر هذه البيانات جهازك أبدًا.</p>
+  <p><strong>لا يلزم إنشاء حساب:</strong> لا يطلب التطبيق إنشاء حساب أو تقديم أي معلومات شخصية.</p>
+
+  <h2>3. المعلومات التي لا نجمعها</h2>
+  <div class="no-collect-box">
+    <ul>
+      <li>معلومات التعريف الشخصي</li>
+      <li>معرّفات الجهاز أو معرّفات الإعلانات</li>
+      <li>تحليلات الاستخدام أو البيانات السلوكية</li>
+      <li>بيانات الموقع إلى خوادم خارجية</li>
+      <li>أي بيانات إلى خوادم خارجية على الإطلاق</li>
+    </ul>
+  </div>
+
+  <h2>4. الأذونات</h2>
+  <p><strong>الموقع (اختياري):</strong> يُستخدم فقط للكشف التلقائي عن مدينتك لحساب أوقات الصلاة. يمكنك إدخال مدينتك يدويًا ورفض هذا الإذن تمامًا.</p>
+  <p><strong>الإشعارات (اختيارية):</strong> تُستخدم لإرسال تنبيهات الأذان والأذكار في الأوقات التي تحددها. يمكنك تعطيل الإشعارات في أي وقت من إعدادات جهازك.</p>
+
+  <h2>5. خدمات الطرف الثالث</h2>
+  <p>لا يدمج التطبيق أي شبكات إعلانات أو خدمات تحليلات أو وسائل تواصل اجتماعي.</p>
+  <p>يستخدم التطبيق خدمة Nominatim الجغرافية (openstreetmap.org) فقط عند البحث اليدوي عن مدينة. لا تُرسَل أي بيانات شخصية — فقط اسم المدينة الذي تكتبه.</p>
+
+  <h2>6. خصوصية الأطفال</h2>
+  <p>التطبيق مناسب لجميع الأعمار. لا نجمع أي معلومات من الأطفال دون سن 13 عامًا.</p>
+
+  <h2>7. التغييرات على هذه السياسة</h2>
+  <p>قد نحدّث سياسة الخصوصية هذه من وقت لآخر. ستنعكس أي تغييرات بتاريخ محدّث في أعلى هذه الصفحة.</p>
+
+  <h2>8. التواصل</h2>
+  <p>البريد الإلكتروني: <a href="mailto:riwaq@riwaqlabs.com">riwaq@riwaqlabs.com</a><br>
+  الموقع: <a href="https://riwaqlabs.com">riwaqlabs.com</a></p>
+
+  <div class="footer">
+    <p>© 2025 رواق لابز · Riwaq Labs</p>
+    <p><a href="https://riwaqlabs.com">riwaqlabs.com</a></p>
+  </div>
+</div>
+
+<!-- ═══════════ FRENCH ═══════════ -->
+<div id="lang-fr" class="policy-section" lang="fr">
+  <h1>Politique de confidentialité</h1>
+  <p class="app-name">Mawaqit | مواقيت — Développé par Riwaq Labs</p>
+  <p class="last-updated">Dernière mise à jour : mars 2026</p>
+
+  <h2>1. Introduction</h2>
+  <p>Mawaqit est développé par Riwaq Labs. Cette politique de confidentialité explique comment l'application traite vos informations. Nous sommes pleinement engagés à protéger votre vie privée.</p>
+
+  <h2>2. Informations que nous collectons</h2>
+  <p><strong>Données de localisation :</strong> L'application demande l'accès à la localisation de votre appareil uniquement pour calculer les horaires de prière précis et la direction de la Qibla pour votre ville. Les données de localisation sont traitées entièrement sur votre appareil et ne sont jamais transmises à nos serveurs ou à des tiers.</p>
+  <p><strong>Préférences utilisateur :</strong> Les paramètres tels que la méthode de calcul des prières, la langue, le thème et les préférences de notification sont stockés localement sur votre appareil. Ces données ne quittent jamais votre appareil.</p>
+  <p><strong>Aucun compte requis :</strong> L'application ne nécessite pas la création d'un compte ni la fourniture d'informations personnelles.</p>
+
+  <h2>3. Informations que nous ne collectons PAS</h2>
+  <div class="no-collect-box">
+    <ul>
+      <li>Informations d'identification personnelle</li>
+      <li>Identifiants d'appareils ou identifiants publicitaires</li>
+      <li>Analyses d'utilisation ou données comportementales</li>
+      <li>Données de localisation vers des serveurs externes</li>
+      <li>Aucune donnée vers des serveurs externes</li>
+    </ul>
+  </div>
+
+  <h2>4. Autorisations</h2>
+  <p><strong>Localisation (facultative) :</strong> Utilisée uniquement pour détecter automatiquement votre ville. Vous pouvez entrer manuellement votre ville et refuser cette autorisation.</p>
+  <p><strong>Notifications (facultatives) :</strong> Utilisées pour envoyer des rappels d'Adhan et d'Athkar. Vous pouvez les désactiver à tout moment dans les paramètres de votre appareil.</p>
+
+  <h2>5. Services tiers</h2>
+  <p>L'application n'intègre aucun réseau publicitaire, service d'analyse ou SDK de médias sociaux tiers.</p>
+
+  <h2>6. Confidentialité des enfants</h2>
+  <p>L'application convient à tous les âges. Nous ne collectons pas sciemment d'informations auprès d'enfants de moins de 13 ans.</p>
+
+  <h2>7. Modifications</h2>
+  <p>Nous pouvons mettre à jour cette politique de confidentialité de temps à autre. Toute modification sera reflétée par une date mise à jour en haut de cette page.</p>
+
+  <h2>8. Contact</h2>
+  <p>E-mail : <a href="mailto:riwaq@riwaqlabs.com">riwaq@riwaqlabs.com</a><br>
+  Site Web : <a href="https://riwaqlabs.com">riwaqlabs.com</a></p>
+
+  <div class="footer">
+    <p>© 2025 Riwaq Labs · رواق لابز</p>
+    <p><a href="https://riwaqlabs.com">riwaqlabs.com</a></p>
+  </div>
+</div>
+
+<!-- ═══════════ SPANISH ═══════════ -->
+<div id="lang-es" class="policy-section" lang="es">
+  <h1>Política de privacidad</h1>
+  <p class="app-name">Mawaqit | مواقيت — Desarrollado por Riwaq Labs</p>
+  <p class="last-updated">Última actualización: marzo de 2026</p>
+
+  <h2>1. Introducción</h2>
+  <p>Mawaqit es desarrollado por Riwaq Labs. Esta política de privacidad explica cómo la aplicación maneja su información. Estamos plenamente comprometidos con la protección de su privacidad.</p>
+
+  <h2>2. Información que recopilamos</h2>
+  <p><strong>Datos de ubicación:</strong> La aplicación solicita acceso a la ubicación de su dispositivo únicamente para calcular los horarios de oración precisos y la dirección de la Qibla para su ciudad. Los datos de ubicación se procesan completamente en su dispositivo y nunca se transmiten a nuestros servidores ni a terceros.</p>
+  <p><strong>Preferencias del usuario:</strong> La configuración se almacena localmente en su dispositivo y nunca sale del mismo.</p>
+  <p><strong>No se requiere cuenta:</strong> La aplicación no requiere crear una cuenta ni proporcionar información personal.</p>
+
+  <h2>3. Información que NO recopilamos</h2>
+  <div class="no-collect-box">
+    <ul>
+      <li>Información de identificación personal</li>
+      <li>Identificadores de dispositivos o publicitarios</li>
+      <li>Análisis de uso o datos de comportamiento</li>
+      <li>Datos de ubicación a servidores externos</li>
+      <li>Ningún dato a servidores externos</li>
+    </ul>
+  </div>
+
+  <h2>4. Permisos</h2>
+  <p><strong>Ubicación (opcional):</strong> Solo para detectar automáticamente su ciudad. Puede ingresar su ciudad manualmente y denegar este permiso.</p>
+  <p><strong>Notificaciones (opcional):</strong> Para enviar recordatorios de Adhan y Athkar. Puede desactivarlas en cualquier momento.</p>
+
+  <h2>5. Servicios de terceros</h2>
+  <p>La aplicación no integra redes publicitarias, servicios de análisis ni SDKs de redes sociales de terceros.</p>
+
+  <h2>6. Privacidad de los niños</h2>
+  <p>La aplicación es adecuada para todas las edades. No recopilamos información de menores de 13 años.</p>
+
+  <h2>7. Cambios</h2>
+  <p>Podemos actualizar esta política de vez en cuando. Los cambios se reflejarán con una fecha actualizada en la parte superior de esta página.</p>
+
+  <h2>8. Contacto</h2>
+  <p>Correo: <a href="mailto:riwaq@riwaqlabs.com">riwaq@riwaqlabs.com</a><br>
+  Web: <a href="https://riwaqlabs.com">riwaqlabs.com</a></p>
+
+  <div class="footer">
+    <p>© 2025 Riwaq Labs · رواق لابز</p>
+    <p><a href="https://riwaqlabs.com">riwaqlabs.com</a></p>
+  </div>
+</div>
+
+<!-- ═══════════ RUSSIAN ═══════════ -->
+<div id="lang-ru" class="policy-section" lang="ru">
+  <h1>Политика конфиденциальности</h1>
+  <p class="app-name">Mawaqit | مواقيت — Разработано Riwaq Labs</p>
+  <p class="last-updated">Последнее обновление: март 2026 г.</p>
+
+  <h2>1. Введение</h2>
+  <p>Mawaqit разработан компанией Riwaq Labs. Настоящая политика конфиденциальности объясняет, как приложение обрабатывает вашу информацию.</p>
+
+  <h2>2. Информация, которую мы собираем</h2>
+  <p><strong>Данные о местоположении:</strong> Приложение запрашивает доступ к местоположению вашего устройства исключительно для расчёта точного времени молитв и направления Киблы. Данные обрабатываются на вашем устройстве и никогда не передаются третьим лицам.</p>
+  <p><strong>Пользовательские настройки:</strong> Хранятся локально на вашем устройстве и никогда не покидают его.</p>
+  <p><strong>Учётная запись не требуется:</strong> Приложение не требует создания учётной записи или предоставления личных данных.</p>
+
+  <h2>3. Информация, которую мы НЕ собираем</h2>
+  <div class="no-collect-box">
+    <ul>
+      <li>Личная идентификационная информация</li>
+      <li>Идентификаторы устройств или рекламные идентификаторы</li>
+      <li>Аналитика использования или поведенческие данные</li>
+      <li>Данные о местоположении на внешние серверы</li>
+      <li>Любые данные на внешние серверы</li>
+    </ul>
+  </div>
+
+  <h2>4. Разрешения</h2>
+  <p><strong>Местоположение (необязательно):</strong> Только для автоматического определения вашего города. Вы можете ввести город вручную и отказать в этом разрешении.</p>
+  <p><strong>Уведомления (необязательно):</strong> Для напоминаний об азане и зикрах. Вы можете отключить их в любое время.</p>
+
+  <h2>5. Сторонние сервисы</h2>
+  <p>Приложение не интегрирует рекламные сети, аналитические сервисы или SDK социальных сетей.</p>
+
+  <h2>6. Конфиденциальность детей</h2>
+  <p>Приложение подходит для всех возрастов. Мы не собираем данные детей до 13 лет.</p>
+
+  <h2>7. Изменения</h2>
+  <p>Мы можем периодически обновлять эту политику. Изменения будут отражены обновлённой датой вверху страницы.</p>
+
+  <h2>8. Контакты</h2>
+  <p>Email: <a href="mailto:riwaq@riwaqlabs.com">riwaq@riwaqlabs.com</a><br>
+  Сайт: <a href="https://riwaqlabs.com">riwaqlabs.com</a></p>
+
+  <div class="footer">
+    <p>© 2025 Riwaq Labs · رواق لابز</p>
+    <p><a href="https://riwaqlabs.com">riwaqlabs.com</a></p>
+  </div>
+</div>
+
+<!-- ═══════════ CHINESE ═══════════ -->
+<div id="lang-zh" class="policy-section" lang="zh">
+  <h1>隐私政策</h1>
+  <p class="app-name">Mawaqit | مواقيت — 由 Riwaq Labs 开发</p>
+  <p class="last-updated">最后更新：2026年3月</p>
+
+  <h2>1. 简介</h2>
+  <p>Mawaqit 由 Riwaq Labs 开发。本隐私政策说明应用程序如何处理您的信息。我们完全致力于保护您的隐私。</p>
+
+  <h2>2. 我们收集的信息</h2>
+  <p><strong>位置数据：</strong>应用程序仅请求访问您的设备位置以计算您所在城市的精确礼拜时间和朝拜方向。位置数据完全在您的设备上处理，从不传输到我们的服务器或任何第三方。</p>
+  <p><strong>用户偏好：</strong>设置存储在您的设备本地，从不离开您的设备。</p>
+  <p><strong>无需账户：</strong>应用程序不需要创建账户或提供任何个人信息。</p>
+
+  <h2>3. 我们不收集的信息</h2>
+  <div class="no-collect-box">
+    <ul>
+      <li>个人身份信息</li>
+      <li>设备标识符或广告标识符</li>
+      <li>使用分析或行为数据</li>
+      <li>位置数据到外部服务器</li>
+      <li>任何数据到外部服务器</li>
+    </ul>
+  </div>
+
+  <h2>4. 权限</h2>
+  <p><strong>位置（可选）：</strong>仅用于自动检测您的城市。您可以手动输入城市并拒绝此权限。</p>
+  <p><strong>通知（可选）：</strong>用于发送拜功和祈祷提醒。您可以随时在设备设置中禁用。</p>
+
+  <h2>5. 第三方服务</h2>
+  <p>应用程序不集成任何第三方广告网络、分析服务或社交媒体SDK。</p>
+
+  <h2>6. 儿童隐私</h2>
+  <p>该应用程序适合所有年龄段。我们不会故意收集13岁以下儿童的信息。</p>
+
+  <h2>7. 变更</h2>
+  <p>我们可能会不时更新本隐私政策。任何更改都将在本页顶部的更新日期中反映。</p>
+
+  <h2>8. 联系方式</h2>
+  <p>邮箱：<a href="mailto:riwaq@riwaqlabs.com">riwaq@riwaqlabs.com</a><br>
+  网站：<a href="https://riwaqlabs.com">riwaqlabs.com</a></p>
+
+  <div class="footer">
+    <p>© 2025 Riwaq Labs · رواق لابز</p>
+    <p><a href="https://riwaqlabs.com">riwaqlabs.com</a></p>
+  </div>
+</div>
+
+<!-- ═══════════ TURKISH ═══════════ -->
+<div id="lang-tr" class="policy-section" lang="tr">
+  <h1>Gizlilik Politikası</h1>
+  <p class="app-name">Mawaqit | مواقيت — Riwaq Labs tarafından geliştirilmiştir</p>
+  <p class="last-updated">Son güncelleme: Mart 2026</p>
+
+  <h2>1. Giriş</h2>
+  <p>Mawaqit, Riwaq Labs tarafından geliştirilmiştir. Bu Gizlilik Politikası, uygulamanın bilgilerinizi nasıl işlediğini açıklar. Gizliliğinizi koruma konusunda tam anlamıyla kararlıyız.</p>
+
+  <h2>2. Topladığımız Bilgiler</h2>
+  <p><strong>Konum Verileri:</strong> Uygulama, yalnızca şehriniz için doğru namaz vakitlerini ve kıble yönünü hesaplamak amacıyla cihaz konumunuza erişim ister. Konum verileri tamamen cihazınızda işlenir ve hiçbir zaman iletilmez.</p>
+  <p><strong>Kullanıcı Tercihleri:</strong> Ayarlar cihazınızda yerel olarak saklanır ve cihazınızı hiçbir zaman terk etmez.</p>
+  <p><strong>Hesap Gerekmez:</strong> Uygulama hesap oluşturmanızı veya kişisel bilgi sağlamanızı gerektirmez.</p>
+
+  <h2>3. Toplamadığımız Bilgiler</h2>
+  <div class="no-collect-box">
+    <ul>
+      <li>Kişisel tanımlama bilgileri</li>
+      <li>Cihaz tanımlayıcıları veya reklam kimlikleri</li>
+      <li>Kullanım analitikleri veya davranışsal veriler</li>
+      <li>Konum verileri harici sunuculara</li>
+      <li>Harici sunuculara hiçbir veri</li>
+    </ul>
+  </div>
+
+  <h2>4. İzinler</h2>
+  <p><strong>Konum (isteğe bağlı):</strong> Yalnızca şehrinizi otomatik algılamak için kullanılır. Şehrinizi manuel olarak girebilir ve bu izni reddedebilirsiniz.</p>
+  <p><strong>Bildirimler (isteğe bağlı):</strong> Ezan ve zikir hatırlatıcıları için kullanılır. İstediğiniz zaman devre dışı bırakabilirsiniz.</p>
+
+  <h2>5. Üçüncü Taraf Hizmetler</h2>
+  <p>Uygulama herhangi bir üçüncü taraf reklam ağı, analitik hizmet veya sosyal medya SDK'sı entegre etmez.</p>
+
+  <h2>6. Çocukların Gizliliği</h2>
+  <p>Uygulama tüm yaşlara uygundur. 13 yaşın altındaki çocuklardan bilerek bilgi toplamayız.</p>
+
+  <h2>7. Değişiklikler</h2>
+  <p>Bu politikayı zaman zaman güncelleyebiliriz. Değişiklikler bu sayfanın üstündeki güncellenen tarihte yansıtılacaktır.</p>
+
+  <h2>8. İletişim</h2>
+  <p>E-posta: <a href="mailto:riwaq@riwaqlabs.com">riwaq@riwaqlabs.com</a><br>
+  Web sitesi: <a href="https://riwaqlabs.com">riwaqlabs.com</a></p>
+
+  <div class="footer">
+    <p>© 2025 Riwaq Labs · رواق لابز</p>
+    <p><a href="https://riwaqlabs.com">riwaqlabs.com</a></p>
+  </div>
+</div>
+
+<!-- ═══════════ URDU ═══════════ -->
+<div id="lang-ur" class="policy-section" dir="rtl" lang="ur">
+  <h1>رازداری کی پالیسی</h1>
+  <p class="app-name">مواقيت | Mawaqit — تیار کردہ رواق لابز</p>
+  <p class="last-updated">آخری اپ ڈیٹ: مارچ 2026</p>
+
+  <h2>1. تعارف</h2>
+  <p>مواقيت رواق لابز نے تیار کیا ہے۔ یہ رازداری کی پالیسی بتاتی ہے کہ ایپ آپ کی معلومات کے ساتھ کیسے برتاؤ کرتی ہے۔ ہم آپ کی رازداری کی حفاظت کے لیے مکمل طور پر پرعزم ہیں۔</p>
+
+  <h2>2. جو معلومات ہم جمع کرتے ہیں</h2>
+  <p><strong>مقام کا ڈیٹا:</strong> ایپ صرف آپ کے شہر کے لیے درست اوقاتِ نماز اور قبلہ کی سمت کا حساب لگانے کے لیے آپ کے آلے کے مقام تک رسائی مانگتی ہے۔ مقام کا ڈیٹا مکمل طور پر آپ کے آلے پر پروسیس ہوتا ہے اور کبھی بھی کسی سرور کو نہیں بھیجا جاتا۔</p>
+  <p><strong>صارف کی ترجیحات:</strong> ترتیبات آپ کے آلے میں مقامی طور پر محفوظ رہتی ہیں اور کبھی باہر نہیں جاتیں۔</p>
+  <p><strong>اکاؤنٹ کی ضرورت نہیں:</strong> ایپ کوئی اکاؤنٹ یا ذاتی معلومات نہیں مانگتی۔</p>
+
+  <h2>3. جو معلومات ہم جمع نہیں کرتے</h2>
+  <div class="no-collect-box">
+    <ul>
+      <li>ذاتی شناختی معلومات</li>
+      <li>آلے کے شناخت کار یا اشتہاری IDs</li>
+      <li>استعمال کا تجزیہ یا رویے کا ڈیٹا</li>
+      <li>مقام کا ڈیٹا بیرونی سرورز پر</li>
+      <li>کوئی بھی ڈیٹا بیرونی سرورز پر</li>
+    </ul>
+  </div>
+
+  <h2>4. اجازتیں</h2>
+  <p><strong>مقام (اختیاری):</strong> صرف آپ کا شہر خودکار طور پر معلوم کرنے کے لیے۔ آپ دستی طور پر شہر درج کر سکتے ہیں اور یہ اجازت مسترد کر سکتے ہیں۔</p>
+  <p><strong>اطلاعات (اختیاری):</strong> اذان اور اذکار کی یاددہانیوں کے لیے۔ آپ انہیں کسی بھی وقت بند کر سکتے ہیں۔</p>
+
+  <h2>5. تیسرے فریق کی خدمات</h2>
+  <p>ایپ کوئی تیسرے فریق کا اشتہاری نیٹ ورک، تجزیاتی سروس یا سوشل میڈیا SDK شامل نہیں کرتی۔</p>
+
+  <h2>6. بچوں کی رازداری</h2>
+  <p>ایپ تمام عمر کے لوگوں کے لیے موزوں ہے۔ ہم 13 سال سے کم عمر بچوں سے جانتے بوجھتے کوئی معلومات جمع نہیں کرتے۔</p>
+
+  <h2>7. تبدیلیاں</h2>
+  <p>ہم وقتاً فوقتاً اس پالیسی کو اپ ڈیٹ کر سکتے ہیں۔ کوئی بھی تبدیلی اس صفحے کے اوپر اپ ڈیٹ شدہ تاریخ میں ظاہر ہوگی۔</p>
+
+  <h2>8. رابطہ</h2>
+  <p>ای میل: <a href="mailto:riwaq@riwaqlabs.com">riwaq@riwaqlabs.com</a><br>
+  ویب سائٹ: <a href="https://riwaqlabs.com">riwaqlabs.com</a></p>
+
+  <div class="footer">
+    <p>© 2025 رواق لابز · Riwaq Labs</p>
+    <p><a href="https://riwaqlabs.com">riwaqlabs.com</a></p>
+  </div>
+</div>
+
+<!-- ═══════════ INDONESIAN ═══════════ -->
+<div id="lang-id" class="policy-section" lang="id">
+  <h1>Kebijakan Privasi</h1>
+  <p class="app-name">Mawaqit | مواقيت — Dikembangkan oleh Riwaq Labs</p>
+  <p class="last-updated">Terakhir diperbarui: Maret 2026</p>
+
+  <h2>1. Pendahuluan</h2>
+  <p>Mawaqit dikembangkan oleh Riwaq Labs. Kebijakan Privasi ini menjelaskan bagaimana aplikasi menangani informasi Anda. Kami sepenuhnya berkomitmen untuk melindungi privasi Anda.</p>
+
+  <h2>2. Informasi yang Kami Kumpulkan</h2>
+  <p><strong>Data Lokasi:</strong> Aplikasi meminta akses ke lokasi perangkat Anda hanya untuk menghitung waktu shalat yang akurat dan arah kiblat untuk kota Anda. Data lokasi diproses sepenuhnya di perangkat Anda dan tidak pernah dikirimkan ke server kami atau pihak ketiga mana pun.</p>
+  <p><strong>Preferensi Pengguna:</strong> Pengaturan disimpan secara lokal di perangkat Anda dan tidak pernah meninggalkan perangkat Anda.</p>
+  <p><strong>Tidak Perlu Akun:</strong> Aplikasi tidak memerlukan pembuatan akun atau pemberian informasi pribadi.</p>
+
+  <h2>3. Informasi yang TIDAK Kami Kumpulkan</h2>
+  <div class="no-collect-box">
+    <ul>
+      <li>Informasi identifikasi pribadi</li>
+      <li>Pengidentifikasi perangkat atau ID iklan</li>
+      <li>Analitik penggunaan atau data perilaku</li>
+      <li>Data lokasi ke server eksternal</li>
+      <li>Data apa pun ke server eksternal</li>
+    </ul>
+  </div>
+
+  <h2>4. Izin</h2>
+  <p><strong>Lokasi (opsional):</strong> Hanya untuk mendeteksi kota Anda secara otomatis. Anda dapat memasukkan kota secara manual dan menolak izin ini.</p>
+  <p><strong>Notifikasi (opsional):</strong> Untuk pengingat Adzan dan Dzikir. Anda dapat menonaktifkannya kapan saja.</p>
+
+  <h2>5. Layanan Pihak Ketiga</h2>
+  <p>Aplikasi tidak mengintegrasikan jaringan iklan, layanan analitik, atau SDK media sosial pihak ketiga.</p>
+
+  <h2>6. Privasi Anak</h2>
+  <p>Aplikasi cocok untuk semua usia. Kami tidak dengan sengaja mengumpulkan informasi dari anak-anak di bawah 13 tahun.</p>
+
+  <h2>7. Perubahan</h2>
+  <p>Kami dapat memperbarui kebijakan ini dari waktu ke waktu. Perubahan akan tercermin dengan tanggal yang diperbarui di bagian atas halaman ini.</p>
+
+  <h2>8. Kontak</h2>
+  <p>Email: <a href="mailto:riwaq@riwaqlabs.com">riwaq@riwaqlabs.com</a><br>
+  Situs web: <a href="https://riwaqlabs.com">riwaqlabs.com</a></p>
+
+  <div class="footer">
+    <p>© 2025 Riwaq Labs · رواق لابز</p>
+    <p><a href="https://riwaqlabs.com">riwaqlabs.com</a></p>
+  </div>
+</div>
+
+<!-- ═══════════ BENGALI ═══════════ -->
+<div id="lang-bn" class="policy-section" lang="bn">
+  <h1>গোপনীয়তা নীতি</h1>
+  <p class="app-name">Mawaqit | مواقيت — Riwaq Labs কর্তৃক তৈরি</p>
+  <p class="last-updated">সর্বশেষ আপডেট: মার্চ ২০২৬</p>
+
+  <h2>১. ভূমিকা</h2>
+  <p>Mawaqit, Riwaq Labs দ্বারা তৈরি। এই গোপনীয়তা নীতি ব্যাখ্যা করে কিভাবে অ্যাপ আপনার তথ্য পরিচালনা করে। আমরা আপনার গোপনীয়তা রক্ষায় সম্পূর্ণ প্রতিশ্রুতিবদ্ধ।</p>
+
+  <h2>২. আমরা যে তথ্য সংগ্রহ করি</h2>
+  <p><strong>অবস্থান ডেটা:</strong> অ্যাপটি শুধুমাত্র আপনার শহরের সঠিক নামাজের সময় এবং কিবলার দিক গণনা করতে আপনার ডিভাইসের অবস্থানে অ্যাক্সেস চায়। অবস্থান ডেটা সম্পূর্ণরূপে আপনার ডিভাইসে প্রক্রিয়া করা হয় এবং কখনও প্রেরণ করা হয় না।</p>
+  <p><strong>ব্যবহারকারীর পছন্দ:</strong> সেটিংস আপনার ডিভাইসে স্থানীয়ভাবে সংরক্ষিত হয় এবং কখনও বের হয় না।</p>
+  <p><strong>কোনো অ্যাকাউন্ট প্রয়োজন নেই:</strong> অ্যাপটি কোনো অ্যাকাউন্ট বা ব্যক্তিগত তথ্য চায় না।</p>
+
+  <h2>৩. আমরা যা সংগ্রহ করি না</h2>
+  <div class="no-collect-box">
+    <ul>
+      <li>ব্যক্তিগত পরিচয় তথ্য</li>
+      <li>ডিভাইস পরিচয়কারী বা বিজ্ঞাপন IDs</li>
+      <li>ব্যবহার বিশ্লেষণ বা আচরণগত ডেটা</li>
+      <li>বাহ্যিক সার্ভারে অবস্থান ডেটা</li>
+      <li>বাহ্যিক সার্ভারে যেকোনো ডেটা</li>
+    </ul>
+  </div>
+
+  <h2>৪. অনুমতি</h2>
+  <p><strong>অবস্থান (ঐচ্ছিক):</strong> শুধুমাত্র আপনার শহর স্বয়ংক্রিয়ভাবে সনাক্ত করতে। আপনি ম্যানুয়ালি শহর লিখতে পারেন এবং এই অনুমতি প্রত্যাখ্যান করতে পারেন।</p>
+  <p><strong>বিজ্ঞপ্তি (ঐচ্ছিক):</strong> আজান ও যিকিরের রিমাইন্ডারের জন্য। আপনি যেকোনো সময় নিষ্ক্রিয় করতে পারেন।</p>
+
+  <h2>৫. তৃতীয় পক্ষের পরিষেবা</h2>
+  <p>অ্যাপটি কোনো তৃতীয় পক্ষের বিজ্ঞাপন নেটওয়ার্ক, বিশ্লেষণ পরিষেবা বা সামাজিক মিডিয়া SDK সংযুক্ত করে না।</p>
+
+  <h2>৬. শিশুদের গোপনীয়তা</h2>
+  <p>অ্যাপটি সকল বয়সের জন্য উপযুক্ত। আমরা ১৩ বছরের কম বয়সী শিশুদের কাছ থেকে জেনেশুনে তথ্য সংগ্রহ করি না।</p>
+
+  <h2>৭. পরিবর্তন</h2>
+  <p>আমরা সময়ে সময়ে এই নীতি আপডেট করতে পারি। পরিবর্তনগুলি এই পৃষ্ঠার শীর্ষে আপডেট তারিখে প্রতিফলিত হবে।</p>
+
+  <h2>৮. যোগাযোগ</h2>
+  <p>ইমেইল: <a href="mailto:riwaq@riwaqlabs.com">riwaq@riwaqlabs.com</a><br>
+  ওয়েবসাইট: <a href="https://riwaqlabs.com">riwaqlabs.com</a></p>
+
+  <div class="footer">
+    <p>© 2025 Riwaq Labs · رواق لابز</p>
+    <p><a href="https://riwaqlabs.com">riwaqlabs.com</a></p>
+  </div>
+</div>
+
+<!-- ═══════════ PERSIAN ═══════════ -->
+<div id="lang-fa" class="policy-section" dir="rtl" lang="fa">
+  <h1>سیاست حفظ حریم خصوصی</h1>
+  <p class="app-name">مواقیت | Mawaqit — توسعه یافته توسط رواق لابز</p>
+  <p class="last-updated">آخرین به‌روزرسانی: مارس ۲۰۲۶</p>
+
+  <h2>۱. مقدمه</h2>
+  <p>مواقیت توسط رواق لابز توسعه یافته است. این سیاست حفظ حریم خصوصی توضیح می‌دهد که برنامه چگونه اطلاعات شما را مدیریت می‌کند. ما کاملاً متعهد به حفاظت از حریم خصوصی شما هستیم.</p>
+
+  <h2>۲. اطلاعاتی که جمع‌آوری می‌کنیم</h2>
+  <p><strong>داده‌های موقعیت مکانی:</strong> برنامه فقط برای محاسبه اوقات نماز دقیق و جهت قبله برای شهر شما به موقعیت مکانی دستگاه شما دسترسی می‌خواهد. داده‌های موقعیت مکانی کاملاً روی دستگاه شما پردازش می‌شود و هرگز منتقل نمی‌شود.</p>
+  <p><strong>تنظیمات کاربر:</strong> تنظیمات به صورت محلی روی دستگاه شما ذخیره می‌شود و هرگز آن را ترک نمی‌کند.</p>
+  <p><strong>نیازی به حساب کاربری نیست:</strong> برنامه نیازی به ایجاد حساب کاربری یا ارائه اطلاعات شخصی ندارد.</p>
+
+  <h2>۳. اطلاعاتی که جمع‌آوری نمی‌کنیم</h2>
+  <div class="no-collect-box">
+    <ul>
+      <li>اطلاعات شناسایی شخصی</li>
+      <li>شناسه‌های دستگاه یا شناسه‌های تبلیغاتی</li>
+      <li>تجزیه و تحلیل استفاده یا داده‌های رفتاری</li>
+      <li>داده‌های موقعیت مکانی به سرورهای خارجی</li>
+      <li>هیچ داده‌ای به سرورهای خارجی</li>
+    </ul>
+  </div>
+
+  <h2>۴. مجوزها</h2>
+  <p><strong>موقعیت مکانی (اختیاری):</strong> فقط برای تشخیص خودکار شهر شما. می‌توانید شهر را به صورت دستی وارد کنید و این مجوز را رد کنید.</p>
+  <p><strong>اعلان‌ها (اختیاری):</strong> برای یادآوری اذان و اذکار. می‌توانید در هر زمانی آنها را غیرفعال کنید.</p>
+
+  <h2>۵. خدمات شخص ثالث</h2>
+  <p>برنامه هیچ شبکه تبلیغاتی، سرویس تجزیه و تحلیل یا SDK رسانه‌های اجتماعی شخص ثالثی را ادغام نمی‌کند.</p>
+
+  <h2>۶. حریم خصوصی کودکان</h2>
+  <p>برنامه برای همه سنین مناسب است. ما آگاهانه اطلاعاتی از کودکان زیر ۱۳ سال جمع‌آوری نمی‌کنیم.</p>
+
+  <h2>۷. تغییرات</h2>
+  <p>ممکن است این سیاست را گاهی به‌روزرسانی کنیم. هر تغییری در تاریخ به‌روزرسانی شده در بالای این صفحه منعکس خواهد شد.</p>
+
+  <h2>۸. تماس</h2>
+  <p>ایمیل: <a href="mailto:riwaq@riwaqlabs.com">riwaq@riwaqlabs.com</a><br>
+  وب‌سایت: <a href="https://riwaqlabs.com">riwaqlabs.com</a></p>
+
+  <div class="footer">
+    <p>© 2025 رواق لابز · Riwaq Labs</p>
+    <p><a href="https://riwaqlabs.com">riwaqlabs.com</a></p>
+  </div>
+</div>
+
+<!-- ═══════════ MALAY ═══════════ -->
+<div id="lang-ms" class="policy-section" lang="ms">
+  <h1>Dasar Privasi</h1>
+  <p class="app-name">Mawaqit | مواقيت — Dibangunkan oleh Riwaq Labs</p>
+  <p class="last-updated">Kemaskini terakhir: Mac 2026</p>
+
+  <h2>1. Pengenalan</h2>
+  <p>Mawaqit dibangunkan oleh Riwaq Labs. Dasar Privasi ini menerangkan bagaimana aplikasi mengendalikan maklumat anda. Kami sepenuhnya komited untuk melindungi privasi anda.</p>
+
+  <h2>2. Maklumat yang Kami Kumpulkan</h2>
+  <p><strong>Data Lokasi:</strong> Aplikasi meminta akses kepada lokasi peranti anda hanya untuk mengira waktu solat yang tepat dan arah kiblat untuk bandar anda. Data lokasi diproses sepenuhnya pada peranti anda dan tidak pernah dihantar kepada pelayan kami atau mana-mana pihak ketiga.</p>
+  <p><strong>Pilihan Pengguna:</strong> Tetapan disimpan secara tempatan pada peranti anda dan tidak pernah meninggalkan peranti anda.</p>
+  <p><strong>Tiada Akaun Diperlukan:</strong> Aplikasi tidak memerlukan pembuatan akaun atau pemberian maklumat peribadi.</p>
+
+  <h2>3. Maklumat yang TIDAK Kami Kumpulkan</h2>
+  <div class="no-collect-box">
+    <ul>
+      <li>Maklumat pengenalan peribadi</li>
+      <li>Pengecam peranti atau ID pengiklanan</li>
+      <li>Analitik penggunaan atau data tingkah laku</li>
+      <li>Data lokasi ke pelayan luaran</li>
+      <li>Sebarang data ke pelayan luaran</li>
+    </ul>
+  </div>
+
+  <h2>4. Kebenaran</h2>
+  <p><strong>Lokasi (pilihan):</strong> Hanya untuk mengesan bandar anda secara automatik. Anda boleh memasukkan bandar secara manual dan menolak kebenaran ini.</p>
+  <p><strong>Pemberitahuan (pilihan):</strong> Untuk peringatan Azan dan Zikir. Anda boleh menyahaktifkannya pada bila-bila masa.</p>
+
+  <h2>5. Perkhidmatan Pihak Ketiga</h2>
+  <p>Aplikasi tidak mengintegrasikan sebarang rangkaian pengiklanan, perkhidmatan analitik atau SDK media sosial pihak ketiga.</p>
+
+  <h2>6. Privasi Kanak-kanak</h2>
+  <p>Aplikasi sesuai untuk semua peringkat umur. Kami tidak mengumpulkan maklumat daripada kanak-kanak bawah 13 tahun secara sedar.</p>
+
+  <h2>7. Perubahan</h2>
+  <p>Kami mungkin mengemas kini dasar ini dari semasa ke semasa. Sebarang perubahan akan dicerminkan dengan tarikh yang dikemas kini di bahagian atas halaman ini.</p>
+
+  <h2>8. Hubungi Kami</h2>
+  <p>E-mel: <a href="mailto:riwaq@riwaqlabs.com">riwaq@riwaqlabs.com</a><br>
+  Laman web: <a href="https://riwaqlabs.com">riwaqlabs.com</a></p>
+
+  <div class="footer">
+    <p>© 2025 Riwaq Labs · رواق لابز</p>
+    <p><a href="https://riwaqlabs.com">riwaqlabs.com</a></p>
+  </div>
+</div>
+
+<!-- ═══════════ PORTUGUESE ═══════════ -->
+<div id="lang-pt" class="policy-section" lang="pt">
+  <h1>Política de Privacidade</h1>
+  <p class="app-name">Mawaqit | مواقيت — Desenvolvido pela Riwaq Labs</p>
+  <p class="last-updated">Última atualização: março de 2026</p>
+
+  <h2>1. Introdução</h2>
+  <p>Mawaqit é desenvolvido pela Riwaq Labs. Esta Política de Privacidade explica como o aplicativo lida com suas informações. Estamos plenamente comprometidos em proteger sua privacidade.</p>
+
+  <h2>2. Informações que Coletamos</h2>
+  <p><strong>Dados de Localização:</strong> O aplicativo solicita acesso à localização do seu dispositivo apenas para calcular os horários de oração precisos e a direção da Qibla para sua cidade. Os dados de localização são processados inteiramente no seu dispositivo e nunca são transmitidos.</p>
+  <p><strong>Preferências do Usuário:</strong> As configurações são armazenadas localmente no seu dispositivo e nunca o deixam.</p>
+  <p><strong>Nenhuma Conta Necessária:</strong> O aplicativo não requer criação de conta ou fornecimento de informações pessoais.</p>
+
+  <h2>3. Informações que NÃO Coletamos</h2>
+  <div class="no-collect-box">
+    <ul>
+      <li>Informações de identificação pessoal</li>
+      <li>Identificadores de dispositivos ou IDs de publicidade</li>
+      <li>Análises de uso ou dados comportamentais</li>
+      <li>Dados de localização para servidores externos</li>
+      <li>Quaisquer dados para servidores externos</li>
+    </ul>
+  </div>
+
+  <h2>4. Permissões</h2>
+  <p><strong>Localização (opcional):</strong> Apenas para detectar automaticamente sua cidade. Você pode inserir sua cidade manualmente e negar esta permissão.</p>
+  <p><strong>Notificações (opcional):</strong> Para lembretes de Adhan e Athkar. Você pode desativá-las a qualquer momento.</p>
+
+  <h2>5. Serviços de Terceiros</h2>
+  <p>O aplicativo não integra redes de publicidade, serviços de análise ou SDKs de mídia social de terceiros.</p>
+
+  <h2>6. Privacidade das Crianças</h2>
+  <p>O aplicativo é adequado para todas as idades. Não coletamos informações de crianças menores de 13 anos intencionalmente.</p>
+
+  <h2>7. Alterações</h2>
+  <p>Podemos atualizar esta política periodicamente. Quaisquer alterações serão refletidas com uma data atualizada no topo desta página.</p>
+
+  <h2>8. Contato</h2>
+  <p>E-mail: <a href="mailto:riwaq@riwaqlabs.com">riwaq@riwaqlabs.com</a><br>
+  Site: <a href="https://riwaqlabs.com">riwaqlabs.com</a></p>
+
+  <div class="footer">
+    <p>© 2025 Riwaq Labs · رواق لابز</p>
+    <p><a href="https://riwaqlabs.com">riwaqlabs.com</a></p>
+  </div>
+</div>
+
+<!-- ═══════════ SWAHILI ═══════════ -->
+<div id="lang-sw" class="policy-section" lang="sw">
+  <h1>Sera ya Faragha</h1>
+  <p class="app-name">Mawaqit | مواقيت — Imetengenezwa na Riwaq Labs</p>
+  <p class="last-updated">Ilisasishwa mwisho: Machi 2026</p>
+
+  <h2>1. Utangulizi</h2>
+  <p>Mawaqit imetengenezwa na Riwaq Labs. Sera hii ya Faragha inaeleza jinsi programu inavyoshughulikia maelezo yako. Tunajitolea kikamilifu kulinda faragha yako.</p>
+
+  <h2>2. Maelezo Tunayokusanya</h2>
+  <p><strong>Data ya Eneo:</strong> Programu inaomba ufikiaji wa eneo la kifaa chako tu ili kuhesabu nyakati sahihi za sala na mwelekeo wa Kibla kwa mji wako. Data ya eneo inashughulikiwa kabisa kwenye kifaa chako na haipelekwi kamwe kwa seva zetu au mtu yeyote wa tatu.</p>
+  <p><strong>Mapendeleo ya Mtumiaji:</strong> Mipangilio huhifadhiwa ndani ya kifaa chako na haiacha kifaa chako kamwe.</p>
+  <p><strong>Hakuna Akaunti Inayohitajika:</strong> Programu haihitaji kuunda akaunti au kutoa maelezo yoyote ya kibinafsi.</p>
+
+  <h2>3. Maelezo Tusiyokusanya</h2>
+  <div class="no-collect-box">
+    <ul>
+      <li>Maelezo ya utambulisho wa kibinafsi</li>
+      <li>Vitambulisho vya kifaa au vitambulisho vya matangazo</li>
+      <li>Uchambuzi wa matumizi au data ya tabia</li>
+      <li>Data ya eneo kwa seva za nje</li>
+      <li>Data yoyote kwa seva za nje</li>
+    </ul>
+  </div>
+
+  <h2>4. Ruhusa</h2>
+  <p><strong>Eneo (hiari):</strong> Kwa ajili ya kutambua mji wako kiotomatiki tu. Unaweza kuingiza mji wako kwa mkono na kukataa ruhusa hii.</p>
+  <p><strong>Arifa (hiari):</strong> Kwa vikumbusho vya Adhan na Dhikri. Unaweza kuzizima wakati wowote.</p>
+
+  <h2>5. Huduma za Watu wa Tatu</h2>
+  <p>Programu haijumuishi mitandao yoyote ya matangazo, huduma za uchambuzi, au SDK za mitandao ya kijamii ya watu wa tatu.</p>
+
+  <h2>6. Faragha ya Watoto</h2>
+  <p>Programu inafaa kwa umri wote. Hatukusanyi maelezo kutoka kwa watoto chini ya miaka 13 kwa makusudi.</p>
+
+  <h2>7. Mabadiliko</h2>
+  <p>Tunaweza kusasisha sera hii mara kwa mara. Mabadiliko yoyote yataonekana na tarehe iliyosasishwa juu ya ukurasa huu.</p>
+
+  <h2>8. Mawasiliano</h2>
+  <p>Barua pepe: <a href="mailto:riwaq@riwaqlabs.com">riwaq@riwaqlabs.com</a><br>
+  Tovuti: <a href="https://riwaqlabs.com">riwaqlabs.com</a></p>
+
+  <div class="footer">
+    <p>© 2025 Riwaq Labs · رواق لابز</p>
+    <p><a href="https://riwaqlabs.com">riwaqlabs.com</a></p>
+  </div>
+</div>
+
+<!-- ═══════════ HAUSA ═══════════ -->
+<div id="lang-ha" class="policy-section" lang="ha">
+  <h1>Manufar Sirri</h1>
+  <p class="app-name">Mawaqit | مواقيت — An gina ta Riwaq Labs</p>
+  <p class="last-updated">Ranar ƙarshe na sabuntawa: Maris 2026</p>
+
+  <h2>1. Gabatarwa</h2>
+  <p>Riwaq Labs ce ta gina Mawaqit. Wannan Manufar Sirri tana bayyana yadda aikace-aikacen ke kula da bayananku. Muna cikakken alƙawari don kare sirrinku.</p>
+
+  <h2>2. Bayanan da Muke Tattarawa</h2>
+  <p><strong>Bayanin Wuri:</strong> Aikace-aikacen yana neman damar isa ga wurin na'urarku kawai don ƙididdige lokutan sallah daidai da alkibla ga garinku. Ana sarrafa bayanin wuri gaba ɗaya akan na'urarku kuma ba a taɓa aikawa da shi ga sabonanmu ko wata ɓangare ta uku ba.</p>
+  <p><strong>Zaɓin Mai amfani:</strong> Ana adana saitin a gida akan na'urarku kuma ba ya taɓa barin na'urarku.</p>
+  <p><strong>Ba a Buƙatar Asusun:</strong> Aikace-aikacen baya buƙatar ƙirƙirar asusun ko bayar da wasu bayanan sirri.</p>
+
+  <h2>3. Bayanan da Ba Mu Tattarawa BA</h2>
+  <div class="no-collect-box">
+    <ul>
+      <li>Bayanan ganewa na sirri</li>
+      <li>Alamomin na'ura ko alamomin talla</li>
+      <li>Nazarin amfani ko bayanin ɗabi'a</li>
+      <li>Bayanin wuri zuwa sabonan waje</li>
+      <li>Kowane bayanai zuwa sabonan waje</li>
+    </ul>
+  </div>
+
+  <h2>4. Izini</h2>
+  <p><strong>Wuri (zaɓi):</strong> Kawai don gano garinku ta atomatik. Zaku iya shigar da garinku da hannu kuma ku ƙi wannan izinin.</p>
+  <p><strong>Sanarwa (zaɓi):</strong> Don tunatarwa na Kiran Sallah da Azkar. Zaku iya kashe su a kowane lokaci.</p>
+
+  <h2>5. Ayyukan Ɓangare ta Uku</h2>
+  <p>Aikace-aikacen baya haɗa kowane hanyoyin sadarwa na talla, ayyukan nazari, ko SDK na kafofin watsa labarai na zamantakewa na ɓangare ta uku.</p>
+
+  <h2>6. Sirrin Yara</h2>
+  <p>Aikace-aikacen ya dace da dukkan shekarun. Ba ma tattara bayanan yara ƙasa da shekara 13 da gangan.</p>
+
+  <h2>7. Canje-canje</h2>
+  <p>Muna iya sabunta wannan manufar lokaci zuwa lokaci. Duk wasu canje-canje za a nuna tare da ranar da aka sabunta a saman wannan shafin.</p>
+
+  <h2>8. Tuntuɓi</h2>
+  <p>Email: <a href="mailto:riwaq@riwaqlabs.com">riwaq@riwaqlabs.com</a><br>
+  Shafin yanar gizo: <a href="https://riwaqlabs.com">riwaqlabs.com</a></p>
+
+  <div class="footer">
+    <p>© 2025 Riwaq Labs · رواق لابز</p>
+    <p><a href="https://riwaqlabs.com">riwaqlabs.com</a></p>
+  </div>
+</div>
+
+</div><!-- end container -->
+
+<script>
+function setLang(lang, dir, btn) {
+  // Hide all sections
+  document.querySelectorAll('.policy-section').forEach(s => s.classList.remove('active'));
+  // Remove active from all buttons
+  document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
+  // Show selected section
+  document.getElementById('lang-' + lang).classList.add('active');
+  // Mark button active
+  btn.classList.add('active');
+  // Set page direction
+  document.documentElement.setAttribute('dir', dir);
+  document.documentElement.setAttribute('lang', lang);
+}
+
+// Auto-detect browser language on load
+window.addEventListener('load', function() {
+  const browserLang = (navigator.language || 'en').split('-')[0];
+  const supported = ['en','ar','fr','es','ru','zh','tr','ur','id','bn','fa','ms','pt','sw','ha'];
+  const lang = supported.includes(browserLang) ? browserLang : 'en';
+  const btn = document.querySelector(`.lang-btn[onclick*="'${lang}'"]`);
+  if (btn && lang !== 'en') {
+    const dir = ['ar','ur','fa'].includes(lang) ? 'rtl' : 'ltr';
+    setLang(lang, dir, btn);
+  }
+});
+</script>
+
+</body>
 </html>
