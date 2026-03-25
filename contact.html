@@ -218,21 +218,13 @@
     <p class="contact-sub">We read every message and respond personally.</p>
 
     <!-- SUCCESS STATE -->
-    <div class="success-msg" id="success-msg">
-      <div class="success-gem"></div>
+    
       <div class="success-title">Message Received</div>
       <p class="success-text">جزاك الله خيراً — we will be in touch.</p>
     </div>
 
     <!-- CONTACT FORM — Netlify handles submission and emails riwaq@riwaqlabs.com -->
-    <form
-      id="contact-form"
-      name="contact"
-      method="POST"
-      data-netlify="true"
-      netlify-honeypot="bot-field"
-      onsubmit="handleSubmit(event)"
-    >
+    <form name="contact" method="POST" action="/thank-you.html" data-netlify="true" netlify-honeypot="bot-field">
       <!-- Netlify honeypot -->
       <input type="hidden" name="form-name" value="contact">
       <div style="display:none"><input name="bot-field"></div>
@@ -264,7 +256,7 @@
         <textarea id="message" name="message" placeholder="Your message..." required></textarea>
       </div>
 
-      <button type="submit" class="submit-btn" id="submit-btn">Send Message</button>
+      <button type="submit" class="submit-btn">Send Message</button>
     </form>
 
   </div>
@@ -297,30 +289,6 @@ if (saved) {
   if (btn) btn.textContent = saved === 'dark' ? '☽' : '☀';
 }
 
-async function handleSubmit(e) {
-  e.preventDefault();
-  const form = document.getElementById('contact-form');
-  const btn = document.getElementById('submit-btn');
-  btn.disabled = true;
-  btn.textContent = 'Sending...';
-
-  const data = new FormData(form);
-
-  try {
-    const res = await fetch('/', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: new URLSearchParams(data).toString()
-    });
-
-    if (res.ok) {
-      form.style.display = 'none';
-      document.getElementById('success-msg').style.display = 'block';
-    } else {
-      btn.disabled = false;
-      btn.textContent = 'Send Message';
-      alert('Something went wrong. Please try again.');
-    }
   } catch (err) {
     btn.disabled = false;
     btn.textContent = 'Send Message';

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Message Sent — Riwaq Labs</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=Jost:wght@200;300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root { --bg:#07050F; --copper:#C4862A; --ivory:#F0E6D2; --text-dim:#7A6A54; --border:rgba(196,134,42,0.18); }
+  [data-theme="light"] { --bg:#F5EDD8; --ivory:#07050F; --text-dim:#5A4A34; }
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--bg);color:var(--ivory);font-family:'Jost',sans-serif;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:40px 24px}
+  .gem{width:48px;height:48px;background:var(--copper);transform:rotate(45deg);margin:0 auto 40px}
+  .ornament{display:flex;align-items:center;gap:12px;margin-bottom:32px;width:100%;max-width:300px}
+  .ornament-line{flex:1;height:1px;background:var(--border)}
+  .ornament-gem{width:6px;height:6px;background:var(--copper);transform:rotate(45deg);flex-shrink:0}
+  .eyebrow{font-family:'Jost',sans-serif;font-size:.68rem;letter-spacing:4px;text-transform:uppercase;color:var(--copper);margin-bottom:16px}
+  h1{font-family:'Cinzel',serif;font-size:2rem;font-weight:600;color:var(--ivory);margin-bottom:16px}
+  .arabic{font-family:'Cormorant Garamond',serif;font-size:1.1rem;color:var(--text-dim);font-style:italic;margin-bottom:40px;direction:rtl}
+  .back-btn{display:inline-block;font-family:'Cinzel',serif;font-size:.75rem;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--bg);background:var(--copper);text-decoration:none;padding:14px 32px;transition:background .2s}
+  .back-btn:hover{background:#D4962A}
+  .home-link{margin-top:20px;display:block;font-family:'Jost',sans-serif;font-size:.75rem;letter-spacing:2px;text-transform:uppercase;color:var(--text-dim);text-decoration:none}
+  .home-link:hover{color:var(--copper)}
+</style>
+</head>
+<body>
+  <div class="gem"></div>
+  <div class="ornament"><div class="ornament-line"></div><div class="ornament-gem"></div><div class="ornament-line"></div></div>
+  <p class="eyebrow">Riwaq Labs · رواق لابز</p>
+  <h1>Message Received</h1>
+  <p class="arabic">جزاك الله خيراً — we will be in touch.</p>
+  <a href="/" class="back-btn">Return Home</a>
+  <a href="/contact.html" class="home-link">Send another message</a>
+</body>
+</html>
