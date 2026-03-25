@@ -217,14 +217,11 @@
     <h1 class="contact-title">Get In Touch</h1>
     <p class="contact-sub">We read every message and respond personally.</p>
 
-    <!-- SUCCESS STATE -->
-    
-      <div class="success-title">Message Received</div>
-      <p class="success-text">جزاك الله خيراً — we will be in touch.</p>
+          <p class="success-text">جزاك الله خيراً — we will be in touch.</p>
     </div>
 
     <!-- CONTACT FORM — Netlify handles submission and emails riwaq@riwaqlabs.com -->
-    <form name="contact" method="POST" action="/thank-you.html" data-netlify="true" netlify-honeypot="bot-field">
+    <form id="contact-form" name="contact" method="POST" action="success.html" data-netlify="true" netlify-honeypot="bot-field">
       <!-- Netlify honeypot -->
       <input type="hidden" name="form-name" value="contact">
       <div style="display:none"><input name="bot-field"></div>

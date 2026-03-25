@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Message Sent — Riwaq Labs</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=Jost:wght@200;300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #07050F; --copper: #C4862A; --ivory: #F0E6D2;
+    --text: #D4C4A8; --text-dim: #7A6A54; --border: rgba(196,134,42,0.18);
+    --nav-h: 64px;
+  }
+  [data-theme="light"] { --bg: #F5EDD8; --ivory: #07050F; --text: #1A1008; }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: var(--bg); color: var(--text);
+    font-family: 'Jost', sans-serif; min-height: 100vh;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    text-align: center; padding: 40px 24px;
+  }
+  .gem {
+    width: 52px; height: 52px; background: var(--copper);
+    transform: rotate(45deg); margin: 0 auto 32px;
+  }
+  .ornament {
+    display: flex; align-items: center; gap: 12px;
+    margin: 0 auto 32px; width: 200px;
+  }
+  .ornament-line { flex: 1; height: 1px; background: var(--border); }
+  .ornament-gem { width: 6px; height: 6px; background: var(--copper); transform: rotate(45deg); flex-shrink: 0; }
+  h1 {
+    font-family: 'Cinzel', serif; font-size: 2rem; font-weight: 600;
+    color: var(--ivory); margin-bottom: 16px;
+  }
+  p {
+    font-family: 'Cormorant Garamond', serif; font-size: 1.1rem;
+    color: var(--text-dim); font-style: italic; margin-bottom: 8px;
+  }
+  .arabic {
+    font-size: 1.3rem; margin-bottom: 48px;
+    font-family: 'Cormorant Garamond', serif; font-style: normal;
+  }
+  a {
+    font-family: 'Cinzel', serif; font-size: .75rem; font-weight: 600;
+    letter-spacing: 3px; text-transform: uppercase;
+    color: var(--bg); background: var(--copper);
+    padding: 14px 32px; text-decoration: none; display: inline-block;
+    transition: opacity .2s;
+  }
+  a:hover { opacity: .85; }
+  .studio {
+    font-family: 'Cinzel', serif; font-size: .7rem;
+    letter-spacing: 3px; color: var(--copper);
+    margin-bottom: 32px;
+  }
+</style>
+</head>
+<body>
+  <div class="gem"></div>
+  <p class="studio">RIWAQ LABS · رواق لابز</p>
+  <div class="ornament">
+    <div class="ornament-line"></div>
+    <div class="ornament-gem"></div>
+    <div class="ornament-line"></div>
+  </div>
+  <h1>Message Received</h1>
+  <p>We read every message and respond personally.</p>
+  <p class="arabic">جزاك الله خيراً</p>
+  <a href="/">Return Home</a>
+</body>
+</html>
